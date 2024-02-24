@@ -21,9 +21,9 @@ app.post('/chargeForCookie', async (request, response) => {
   const requestBody = request.body;
   try {
     const locationId =  process.env.LOCATION_ID;
-    console.log(requestBody.nonce);
-    console.log(requestBody.amount);
-    console.log(requestBody.name);
+    console.log("nonce: "+requestBody.nonce);
+    console.log("amount: "+requestBody.amount);
+    console.log("name: "+requestBody.name);
     const createOrderRequest = getOrderRequest(locationId, requestBody.amount, requestBody.quantity, requestBody.name);
     const createOrderResponse = await ordersApi.createOrder(createOrderRequest);
 
